@@ -10,3 +10,5 @@ Two basic approaches are implemented: the more straightforward one just provides
 
 This algorithm is good at reducing long runs to a few replacements and has a few interesting properties that make it useful for embedded systems and hardware decoding. Decoding requires only a table of byte pairs and substitution values, totaling 3 bytes for each pass: a 32 pass decoder needs only 96 B for the substitution tables. More, each decoding stage only needs 3 bytes to describe the substitution and at most one byte of input for every byte of output, making it trivial to pipeline. A pipelined FPGA decoder can produce one decoded byte every clock cycle, with latency proportional to the number of stages.
 
+bpenc.cpp implements an encoder, bpdec.cpp implements a decoder. The code in misc is an old experiment oriented toward use on an AVR microcontroller.
+
